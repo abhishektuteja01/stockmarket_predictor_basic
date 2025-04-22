@@ -1,6 +1,6 @@
 import yfinance as yf
 import pandas as pd
-import ta  # pip install ta
+import ta  
 
 def download_stock_data(ticker='TSLA', start='2015-01-01', end='2024-12-31'):
     # Explicitly set auto_adjust to False to maintain backward compatibility
@@ -10,8 +10,6 @@ def download_stock_data(ticker='TSLA', start='2015-01-01', end='2024-12-31'):
 
 def add_technical_indicators(df):
     df = df.copy()
-    
-    # Ensure Close is a Series by using .iloc[:,0] if it's a DataFrame
     close_series = df['Close'].iloc[:,0] if isinstance(df['Close'], pd.DataFrame) else df['Close']
     
     print(f"[DEBUG] close_series shape: {close_series.shape}, type: {type(close_series)}")
@@ -42,8 +40,6 @@ def add_technical_indicators(df):
 if __name__ == '__main__':
     ticker = 'AAPL'
     data = download_stock_data(ticker)
-    # Remove this line - no need to squeeze
-    # data['Close'] = data['Close'].squeeze()
     data_with_indicators = add_technical_indicators(data)
     
     print(data_with_indicators.tail())
