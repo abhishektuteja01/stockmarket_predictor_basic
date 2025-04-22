@@ -1,4 +1,3 @@
-import pandas as pd
 
 class TradingEnv:
     def __init__(self, data, initial_balance=10000):
