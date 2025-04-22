@@ -43,7 +43,7 @@ stockmarket_predictor_basic/
 
 ### 1. Clone the Repo
 ```bash
-git clone <your-repo-url>
+git clone <https://github.com/abhishektuteja01/stockmarket_predictor_basic.git>
 cd stockmarket_predictor_basic
 ```
 
